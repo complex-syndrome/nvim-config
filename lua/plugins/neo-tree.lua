@@ -11,11 +11,21 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    follow_current_file = { enabled = true },
+    use_libuv_file_watcher = true,
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
         },
+      },
+    },
+    event_handlers = {
+      {
+        event = 'neo_tree_buffer_enter',
+        handler = function()
+          vim.cmd 'stopinsert' -- force Normal mode
+        end,
       },
     },
   },
