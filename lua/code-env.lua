@@ -1,9 +1,9 @@
 local M = {}
 
 -- Refer :Mason for available downloads
--- Remember to also set it up in other variables
+-- Remember to also set it up for corresponding types in other variables
 M.ensure_installed = {
-  -- Lua
+  -- Lua (Required for configuration)
   'lua-language-server',
   'stylua',
 

@@ -1,4 +1,5 @@
 -- :help nvim-treesitter
+-- :help lsp-vs-treesitter
 
 return {
   {
