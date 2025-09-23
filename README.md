@@ -30,5 +30,6 @@ My Neovim configurations. Used [kickstart.nvim](https://github.com/nvim-lua/kick
 - "\\" to open file explorer, "?" to check its keybinds
 - "Shift + (< | >)" to indent | unindent {VISUAL MODE}
 - "+y to copy to clipboard {VISUAL MODE}
+- gc\[c\] to toggle comments {VISUAL MODE}
 - Try clicking "g" and "\<leader\>" in different file types (txt, py, etc.)
 - :q to quit (VERY IMPORTANT)
