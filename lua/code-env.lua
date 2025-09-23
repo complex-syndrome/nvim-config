@@ -2,34 +2,35 @@ local M = {}
 
 -- Refer :Mason for available downloads
 -- Remember to also set it up for corresponding types in other variables
+-- Ensure the mason installation owner is the user "sudo chown -R $USER:$USER ~/.local/share/nvim/mason"
 M.ensure_installed = {
   -- Lua (Required for configuration)
   'lua-language-server',
   'stylua',
 
-  -- Markdown
-  'markdownlint',
+  -- -- Markdown
+  -- 'markdownlint',
 
-  -- Json
+  -- -- Json
   -- 'jsonls',
   -- 'jsonlint',
   -- 'jq',
 
-  -- Python
+  -- -- Python
   -- 'ruff',
   -- 'pyright',
   -- 'debugpy',
 
-  -- Rust
+  -- -- Rust
   -- 'rust_analyzer',
   -- 'codelldb',
 
-  -- Golang
+  -- -- Golang
   -- 'gopls',
   -- 'goimports',
   -- 'delve',
 
-  -- JS
+  -- -- JS
   -- 'prettierd',
 }
 
