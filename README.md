@@ -4,7 +4,14 @@ My Neovim configurations. Used [kickstart.nvim](https://github.com/nvim-lua/kick
 
 ## Installation
 
-1. Install [Neovim](https://neovim.io) (nightly recommended) and a [Nerd Font](https://github.com/ryanoasis/nerd-fonts) (Optional but still recommended).
+1. Installation:
+   - [Neovim](https://neovim.io) (nightly recommended)
+   - Set a [Nerd Font](https://github.com/ryanoasis/nerd-fonts) as your display font (Optional but still recommended).
+   - Install other dependencies:
+
+       ```sh
+       sudo apt install make git unzip ripgrep fd-find gcc xclip lua5.1 liblua5.1-0-dev
+       ```
 
 2. Clone the config:
 
@@ -24,6 +31,7 @@ My Neovim configurations. Used [kickstart.nvim](https://github.com/nvim-lua/kick
 
 ## Some keybinds to start with
 
+- :checkhealth in nvim to check possible plugin issues
 - Current leader key is "\<Space\>"
 - "\<leader\>sk" to search for all current keybinds
 - "<Ctrl-\/>" to open a terminal

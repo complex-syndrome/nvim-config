@@ -3,6 +3,8 @@ local M = {}
 -- Refer :Mason for available downloads
 -- Remember to also set it up for corresponding types in other variables
 -- Ensure the mason installation owner is the user "sudo chown -R $USER:$USER ~/.local/share/nvim/mason"
+-- Some installation may require other packages, including python3-venv for ruff or npm for markdownlint, refer to :Mason when install fails
+-- Its best to install the language itself before configuring the packages here
 M.ensure_installed = {
   -- Lua (Required for configuration)
   'lua-language-server',
@@ -73,7 +75,7 @@ M.formatters_by_ft = {
   -- 'stop_after_first' runs the first available formatter from the list only
   -- If not mentioned, install using M.ensure_installed
   lua = { 'stylua' },
-  markdown = { 'markdownlint' },
+  -- markdown = { 'markdownlint' },
   -- json = { 'jq' },
 
   -- python = { 'ruff_format' }, --'isort', 'black', stop_after_first = true },
@@ -84,7 +86,7 @@ M.formatters_by_ft = {
 }
 
 M.linters_by_ft = {
-  markdown = { 'markdownlint' },
+  -- markdown = { 'markdownlint' },
   -- json = { 'jsonlint' },
 
   -- python = { 'ruff' },
