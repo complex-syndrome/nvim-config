@@ -53,7 +53,6 @@ return {
       { '<leader>c', group = '[C]ode' },
       { '<leader>d', group = '[D]iagnostics' },
       { '<leader>f', group = '[F]ile' },
-      { '<leader>g', group = '[G]it' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>k', group = '[K]ey' },
       { '<leader>s', group = '[S]earch' },
