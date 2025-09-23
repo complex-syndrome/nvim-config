@@ -31,13 +31,13 @@ My Neovim configurations. Used [kickstart.nvim](https://github.com/nvim-lua/kick
 
 ## Some keybinds to start with
 
-- :checkhealth in nvim to check possible plugin issues
-- Current leader key is "\<Space\>"
-- "\<leader\>sk" to search for all current keybinds
-- "<Ctrl-\/>" to open a terminal
-- "\\" to open file explorer, "?" to check its keybinds
-- "Shift + (< | >)" to indent | unindent {VISUAL MODE}
-- "+y to copy to clipboard {VISUAL MODE}
-- gc\[c\] to toggle comments {VISUAL MODE}
-- Try clicking "g" and "\<leader\>" in different file types (txt, py, etc.)
-- :q to quit (VERY IMPORTANT)
+- `:checkhealth` in nvim to check possible plugin issues
+- Current leader key is `<Space>`
+- `\<leader\>sk` to search for all current keybinds
+- `<Ctrl-\/>` to open a terminal
+- `\\` to open file explorer, `?` to check its keybinds
+- `Shift + (< | >)` to indent | unindent {VISUAL MODE}
+- `"+y` to copy to clipboard {VISUAL MODE}
+- `gc[c]` to toggle comments {VISUAL MODE}
+- Try clicking `g` and `<leader>` in different file types (txt, py, etc.)
+- `:q` to quit (VERY IMPORTANT)
