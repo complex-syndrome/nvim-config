@@ -10,7 +10,13 @@ My Neovim configurations. Used [kickstart.nvim](https://github.com/nvim-lua/kick
    - Install other dependencies:
 
        ```sh
-       sudo apt install make git unzip ripgrep fd-find gcc xclip lua5.1 liblua5.1-0-dev
+       # Ubuntu
+       sudo add-apt-repository ppa:neovim-ppa/unstable -y
+       sudo apt update
+       sudo apt install make git unzip ripgrep fd-find gcc neovim xclip lua5.1 liblua5.1-0-dev
+
+       # Arch
+       sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
        ```
 
 2. Clone the config:
