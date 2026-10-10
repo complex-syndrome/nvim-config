@@ -1,0 +1,12 @@
+.luacheckrc
+.stylua.toml
+
+tags
+test.sh
+.luarc.json
+nvim
+
+spell/
+lazy-lock.json
+
+.ignore

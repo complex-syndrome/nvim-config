@@ -1,0 +1,56 @@
+-- local ls = require 'luasnip'
+-- local s = ls.snippet
+-- local t = ls.text_node
+-- local i = ls.insert_node
+--
+-- return {
+--   s('main', {
+--     t {
+--       'if __name__ == "__main__":',
+--       '    ',
+--     },
+--     i(0),
+--   }),
+--
+--   s('def', {
+--     t 'def ',
+--     i(1, 'function_name'),
+--     t '(',
+--     i(2),
+--     t { '):', '    ' },
+--     i(0),
+--   }),
+--
+--   s('for', {
+--     t 'for ',
+--     i(1, 'item'),
+--     t ' in ',
+--     i(2, 'items'),
+--     t { ':', '    ' },
+--     i(0),
+--   }),
+--
+--   s('class', {
+--     t 'class ',
+--     i(1, 'ClassName'),
+--     t { ':', '    ' },
+--     i(0),
+--   }),
+--     s('dataclass', {
+--   t({
+--     'from dataclasses import dataclass',
+--     '',
+--     '',
+--     '@dataclass',
+--     'class ',
+--   }),
+--   i(1, 'MyClass'),
+--   t({
+--     ':',
+--     '    ',
+--   }),
+--   i(2, 'field: str'),
+--   t({ '', '' }),
+--   i(0),
+-- }),
+-- }
