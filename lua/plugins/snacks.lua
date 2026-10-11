@@ -137,6 +137,20 @@ return {
       end,
       desc = '[F]ind [U]ndo History',
     },
+    {
+      '<leader>fd',
+      function()
+        Snacks.picker.diagnostics()
+      end,
+      desc = '[F]ind [D]iagnostics',
+    },
+    {
+      '<leader>fD',
+      function()
+        Snacks.picker.diagnostics_buffer()
+      end,
+      desc = '[F]ind [D]iagnostics (Buffer)',
+    },
     -- Search
     {
       '<leader>sn',
@@ -179,20 +193,6 @@ return {
         Snacks.picker.commands()
       end,
       desc = '[S]earch [C]ommands',
-    },
-    {
-      '<leader>sd',
-      function()
-        Snacks.picker.diagnostics()
-      end,
-      desc = '[S]earch [D]iagnostics',
-    },
-    {
-      '<leader>sD',
-      function()
-        Snacks.picker.diagnostics_buffer()
-      end,
-      desc = '[S]earch [D]iagnostics (Buffer)',
     },
     {
       '<leader>si',

@@ -30,6 +30,13 @@ M.ensure_installed = {
   -- Markdown
   'markdownlint',
 
+  -- Latex
+  'latexindent',
+  'tex-fmt',
+  'bibtex-tidy',
+  'vale',
+  'texlab',
+
   -- -- Rust
   -- 'rust_analyzer',
   -- 'codelldb',
@@ -169,6 +176,8 @@ M.formatters_by_ft = {
   toml = { 'taplo' },
   yaml = { 'taplo' },
   ini = { 'taplo' },
+  tex = { 'latexindent', 'tex-fmt' },
+  bib = { 'bibtex-tidy' },
 
   -- javascript = { 'prettierd' }, --'prettier', stop_after_first = true },
 }
@@ -186,6 +195,7 @@ M.linters_by_ft = {
   toml = { 'taplo' },
   yaml = { 'taplo' },
   ini = { 'taplo' },
+  tex = { 'vale' },
 
   rust = { 'clippy' },
   go = { 'golangcilint' },
