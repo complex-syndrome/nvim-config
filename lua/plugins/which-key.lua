@@ -59,6 +59,8 @@ return {
       { '<leader>jr', group = 'Jupyter [R]un' },
       { '<leader>k', group = '[K]ey' },
       { '<leader>l', group = '[L]atex' },
+      { '<leader>cs', group = '[C]hange Latex' },
+      { '<leader>ds', group = '[D]elete Latex' },
       { '<leader>s', group = '[S]earch' },
       { '<leader>t', group = '[T]oggle' },
       { '<leader>u', group = '[U]ser Settings' },
