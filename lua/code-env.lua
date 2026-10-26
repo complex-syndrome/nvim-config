@@ -8,206 +8,212 @@ local M = {}
 -- Its best to install the language itself before configuring the packages here
 -- DO NOT USE ensure_installed in NIXOS
 M.ensure_installed = {
-  'stylua',
-  'luacheck',
-  'lua-language-server',
+	"ansible-lint",
+	"ansiblels",
 
-  -- Python
-  'ruff',
-  'basedpyright',
+	"stylua",
+	"luacheck",
+	"lua-language-server",
 
-  -- Shell
-  'shfmt',
-  'shuck',
-  'fish_lsp',
+	-- Python
+	"ruff",
+	"basedpyright",
 
-  -- YAML, JSON, TOML
-  'taplo',
+	-- Shell
+	"shfmt",
+	"shuck",
+	"fish_lsp",
 
-  -- Json
-  'jq',
+	-- YAML, JSON, TOML
+	"taplo",
 
-  -- Markdown
-  'markdownlint',
+	-- Json
+	"jq",
 
-  -- Latex
-  'latexindent',
-  'tex-fmt',
-  'bibtex-tidy',
-  'vale',
-  'texlab',
+	-- Markdown
+	"markdownlint",
 
-  -- -- Rust
-  -- 'rust_analyzer',
-  -- 'codelldb',
-  --
-  -- -- Golang
-  -- 'gopls',
-  -- 'goimports',
-  -- 'delve',
-  --
-  -- -- JS
-  -- 'prettierd',
+	-- Latex
+	"latexindent",
+	"tex-fmt",
+	"bibtex-tidy",
+	"vale",
+	"texlab",
+
+	-- -- Rust
+	-- 'rust_analyzer',
+	-- 'codelldb',
+	--
+	-- -- Golang
+	-- 'gopls',
+	-- 'goimports',
+	-- 'delve',
+	--
+	-- -- JS
+	-- 'prettierd',
 }
 
 M.servers = {
-  --  Add any additional override configuration in the following tables. Available keys are:
-  --  - cmd (table): Override the default command used to start the server
-  --  - filetypes (table): Override the default list of associated filetypes for the server
-  --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-  --  - settings (table): Override the default settings passed when initializing the server.
-  --  For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+	--  Add any additional override configuration in the following tables. Available keys are:
+	--  - cmd (table): Override the default command used to start the server
+	--  - filetypes (table): Override the default list of associated filetypes for the server
+	--  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
+	--  - settings (table): Override the default settings passed when initializing the server.
+	--  For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 
-  lua_ls = {
-    -- cmd = { ... },
-    -- filetypes = { ... },
-    -- capabilities = {},
-    settings = {
-      Lua = {
-        runtime = {
-          version = 'LuaJIT',
-        },
-        completion = {
-          callSnippet = 'Replace',
-        },
-        diagnostics = {
-          globals = { 'hl', 'vim', 'Snacks' },
-          disable = { 'undefined-global' },
-        },
-        workspace = {
-          library = {
-            vim.api.nvim_get_runtime_file('', true),
-            vim.fn.stdpath 'data' .. '/lazy/snacks.nvim',
-          },
-          checkThirdParty = false,
-        },
-        telemetry = {
-          enable = false,
-        },
-      },
-    },
-  },
+	lua_ls = {
+		-- cmd = { ... },
+		-- filetypes = { ... },
+		-- capabilities = {},
+		settings = {
+			Lua = {
+				runtime = {
+					version = "LuaJIT",
+				},
+				completion = {
+					callSnippet = "Replace",
+				},
+				diagnostics = {
+					globals = { "hl", "vim", "Snacks" },
+					disable = { "undefined-global" },
+				},
+				workspace = {
+					library = {
+						vim.api.nvim_get_runtime_file("", true),
+						vim.fn.stdpath("data") .. "/lazy/snacks.nvim",
+					},
+					checkThirdParty = false,
+				},
+				telemetry = {
+					enable = false,
+				},
+			},
+		},
+	},
 
-  gopls = {
-    settings = {
-      gopls = {
-        completeUnimported = true,
-        usePlaceholders = true,
-        analyses = {
-          unusedparams = true,
-          shadow = true,
-        },
-        staticcheck = true,
-      },
-    },
-  },
+	gopls = {
+		settings = {
+			gopls = {
+				completeUnimported = true,
+				usePlaceholders = true,
+				analyses = {
+					unusedparams = true,
+					shadow = true,
+				},
+				staticcheck = true,
+			},
+		},
+	},
 
-  basedpyright = {
-    settings = {
-      basedpyright = {
-        analysis = {
-          ignorePatterns = { '*.pyi' },
-          diagnosticSeverityOverrides = {
-            reportCallIssue = 'warning',
-            reportUnreachable = 'warning',
-            reportUnusedImport = 'none',
-            reportUnusedCoroutine = 'warning',
-          },
-          -- diagnosticMode = "workspace",
-          diagnosticMode = 'openFilesOnly',
-          typeCheckingMode = 'basic',
-          reportCallIssue = 'none',
-          disableOrganizeImports = true,
-        },
-      },
-    },
-  },
+	basedpyright = {
+		settings = {
+			basedpyright = {
+				analysis = {
+					ignorePatterns = { "*.pyi" },
+					diagnosticSeverityOverrides = {
+						reportCallIssue = "warning",
+						reportUnreachable = "warning",
+						reportUnusedImport = "none",
+						reportUnusedCoroutine = "warning",
+					},
+					-- diagnosticMode = "workspace",
+					diagnosticMode = "openFilesOnly",
+					typeCheckingMode = "basic",
+					reportCallIssue = "none",
+					disableOrganizeImports = true,
+				},
+			},
+		},
+	},
 
-  fish_lsp = {},
-  taplo = {},
-  shuck = {},
-  jsonls = {},
-  -- rust_analyzer = {
-  --   settings = {
-  --     inlayHints = {
-  --       bindingModeHints = { enable = true },
-  --       chainingHints = { enable = true },
-  --       closingBraceHints = { enable = true },
-  --       parameterHints = { enable = true },
-  --       typeHints = { enable = true },
-  --     },
-  --     cargo = {
-  --       allFeatures = true,
-  --       loadOutDirsFromCheck = true,
-  --     },
-  --     procMacro = {
-  --       enable = true,
-  --     },
-  --   },
-  -- },
+	fish_lsp = {},
+	taplo = {},
+	shuck = {},
+	jsonls = {},
+	-- rust_analyzer = {
+	--   settings = {
+	--     inlayHints = {
+	--       bindingModeHints = { enable = true },
+	--       chainingHints = { enable = true },
+	--       closingBraceHints = { enable = true },
+	--       parameterHints = { enable = true },
+	--       typeHints = { enable = true },
+	--     },
+	--     cargo = {
+	--       allFeatures = true,
+	--       loadOutDirsFromCheck = true,
+	--     },
+	--     procMacro = {
+	--       enable = true,
+	--     },
+	--   },
+	-- },
 
-  -- ts_ls = {},
-  -- clangd = {},
-  -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-  -- Some languages (like typescript) have entire language plugins that can be useful:
-  -- https://github.com/pmizio/typescript-tools.nvim
+	-- ts_ls = {},
+	-- clangd = {},
+	-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
+	-- Some languages (like typescript) have entire language plugins that can be useful:
+	-- https://github.com/pmizio/typescript-tools.nvim
 }
 
 M.formatters_by_ft = {
-  -- Default applies formatter sequentially
-  -- 'stop_after_first' runs the first available formatter from the list only
-  -- If not mentioned, install using M.ensure_installed
+	-- Default applies formatter sequentially
+	-- 'stop_after_first' runs the first available formatter from the list only
+	-- If not mentioned, install using M.ensure_installed
 
-  lua = { 'stylua' },
-  nix = { 'nixfmt' },
-  kdl = { 'kdlfmt' },
+	lua = { "stylua" },
+	nix = { "nixfmt" },
+	kdl = { "kdlfmt" },
 
-  sh = { 'shfmt' },
-  bash = { 'shfmt' },
-  zsh = { 'shfmt' },
+	sh = { "shfmt" },
+	bash = { "shfmt" },
+	zsh = { "shfmt" },
 
-  fish = { 'fish_indent' },
-  go = { 'goimports' },
-  python = { 'ruff' },
-  rust = { 'rustfmt' },
+	fish = { "fish_indent" },
+	go = { "goimports" },
+	python = { "ruff" },
+	rust = { "rustfmt" },
 
-  markdown = { 'markdownlint' },
-  json = { 'jq' },
-  toml = { 'taplo' },
-  yaml = { 'taplo' },
-  ini = { 'taplo' },
-  tex = { 'latexindent', 'tex-fmt' },
-  bib = { 'bibtex-tidy' },
+	markdown = { "markdownlint" },
+	json = { "jq" },
+	toml = { "taplo" },
+	yaml = { "taplo" },
+	ini = { "taplo" },
+	tex = { "latexindent", "tex-fmt" },
+	bib = { "bibtex-tidy" },
 
-  -- javascript = { 'prettierd' }, --'prettier', stop_after_first = true },
+	dart = { "dart_format" },
+
+	["yaml.ansible"] = { "ansible-lint" },
+	-- javascript = { 'prettierd' }, --'prettier', stop_after_first = true },
 }
 
 M.linters_by_ft = {
-  lua = { 'luacheck' },
-  markdown = { 'markdownlint' },
-  json = { 'jq' },
+	lua = { "luacheck" },
+	markdown = { "markdownlint" },
+	json = { "jq" },
 
-  sh = { 'shuck' },
-  bash = { 'shuck' },
-  zsh = { 'shuck' },
-  fish = { 'fish' },
+	sh = { "shuck" },
+	bash = { "shuck" },
+	zsh = { "shuck" },
+	fish = { "fish" },
 
-  toml = { 'taplo' },
-  yaml = { 'taplo' },
-  ini = { 'taplo' },
-  tex = { 'vale' },
+	toml = { "taplo" },
+	yaml = { "taplo" },
+	ini = { "taplo" },
+	tex = { "vale" },
 
-  rust = { 'clippy' },
-  go = { 'golangcilint' },
+	rust = { "clippy" },
+	go = { "golangcilint" },
 
-  -- clojure = { 'clj-kondo' },
-  -- dockerfile = { 'hadolint' },
-  -- inko = { 'inko' },
-  -- janet = { 'janet' },
-  -- rst = { 'vale' },
-  -- ruby = { 'ruby' },
-  -- terraform = { 'tflint' },
-  -- text = { 'vale' }
+	-- clojure = { 'clj-kondo' },
+	-- dockerfile = { 'hadolint' },
+	-- inko = { 'inko' },
+	-- janet = { 'janet' },
+	-- rst = { 'vale' },
+	-- ruby = { 'ruby' },
+	-- terraform = { 'tflint' },
+	-- text = { 'vale' }
 }
 
 return M
