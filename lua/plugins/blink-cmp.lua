@@ -43,9 +43,12 @@ return {
     snippets = { preset = 'luasnip' },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
+      default = { 'snippets', 'lsp', 'path', 'buffer', 'lazydev' },
       providers = {
-        lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+        snippets = {
+          score_offset = 100,
+        },
+        lazydev = { module = 'lazydev.integrations.blink', score_offset = 99 },
       },
     },
 

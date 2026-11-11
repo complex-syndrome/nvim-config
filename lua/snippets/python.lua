@@ -1,7 +1,40 @@
--- local ls = require 'luasnip'
--- local s = ls.snippet
--- local t = ls.text_node
--- local i = ls.insert_node
+local ls = require 'luasnip'
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
+
+return {
+  s('np', {
+    t 'import numpy as np',
+  }),
+
+  s('pd', {
+    t 'import pandas as pd',
+  }),
+
+  s('plt', {
+    t 'import matplotlib.pyplot as plt',
+  }),
+
+  s('dd', {
+    t 'import dask.dataframe as dd',
+  }),
+
+  s('tf', {
+    t 'import tensorflow as tf',
+  }),
+
+  s('enumerate', {
+    t 'for i in enumerate(',
+    i(1, 'arr'),
+    t { '):', '    ' },
+    i(0),
+  }),
+
+  s('super', {
+    t 'super().__init__()',
+  }),
+}
 --
 -- return {
 --   s('main', {
@@ -13,12 +46,12 @@
 --   }),
 --
 --   s('def', {
---     t 'def ',
---     i(1, 'function_name'),
---     t '(',
---     i(2),
---     t { '):', '    ' },
---     i(0),
+-- t 'def ',
+-- i(1, 'function_name'),
+-- t '(',
+-- i(2),
+-- t { '):', '    ' },
+-- i(0),
 --   }),
 --
 --   s('for', {

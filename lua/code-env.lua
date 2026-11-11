@@ -172,7 +172,7 @@ M.formatters_by_ft = {
 
   fish = { 'fish_indent' },
   go = { 'goimports' },
-  python = { 'ruff' },
+  python = { 'ruff', 'black' },
   rust = { 'rustfmt' },
 
   markdown = { 'markdownlint' },
